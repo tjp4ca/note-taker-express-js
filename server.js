@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3003;
 const app = express();
 
 // apiRoutes
-// const apiRoutes = require('./routes/apiRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 // middleware
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // use apiRoutes
-// app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 // listen for localhost 3003
