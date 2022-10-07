@@ -1,6 +1,12 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "id":"257084bd-4b46-402c-87f3-4a63ea038e04",
+        "title":"test1",
+        "text":"test1"
+    },
+    {
+        "id":"f3b87be7-1670-4a53-85d8-74aace42b1c6",
+        "title":"test2",
+        "text":"test2"
     }
 ]

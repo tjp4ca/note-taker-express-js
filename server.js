@@ -1,8 +1,8 @@
 // install "npm i express"
 const express = require('express');
 
-// use localhost 3003
-const PORT = process.env.PORT || 3003;
+// use localhost 3007
+const PORT = process.env.PORT || 3007;
 
 const app = express();
 

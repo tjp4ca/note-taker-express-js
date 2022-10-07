@@ -1,34 +1,23 @@
 const router = require('express').Router();
 const fs = require('fs');
+const db = require('../../db/db.json');
 
 // install npm install uuid
 const { v4: uuidv4 } = require('uuid');
 
 router.get('/', (req, res) => {
-    fs.readFile('../../db/db.json', err =>
-    err ? console.log(err) : console.log('Success!'))
+    res.json(db)
 });
 
 router.post('/', (req, res) => {
+    console.log(req.body)
+    req.body['id']=uuidv4()
+    console.log(req.body)
 
-    const note = body;
-    notesArray.push(note);
-
-    // unique id generated
-    req.body.id = uuidv4();
-
-    // add a new note to db.json in db folder
-    fs.writeFileSync(
-        path.join(__dirname, '../../db/db.json'),
-        JSON.stringify({ notes: notesArray }, null, 2),
-        res.json(note)
-    );
-    return note;
-
-    // fs.writeFile('../../db/db.json', data, err =>
-    // err ? console.log(err) : console.log('Success!'));
-
+    db.push(req.body);
+    res.end()
 });
+
 
 
 module.exports = router;
